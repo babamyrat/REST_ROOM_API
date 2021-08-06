@@ -6,18 +6,18 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 
-import com.example.rest_room_api.model.Category;
+import com.example.rest_room_api.model.ExampleModel;
 
 import java.util.List;
 
 
 @Dao
-public interface CategoryDao {
+public interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(List<Category> categoryList);
+    void insertAll(List<ExampleModel> exampleModelList);
 
     @Query("SELECT * FROM categories")
-    List<Category> loadAll();
+    List<ExampleModel> loadAll();
 
 }

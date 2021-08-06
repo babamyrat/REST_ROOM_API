@@ -8,21 +8,21 @@ import androidx.lifecycle.MutableLiveData;
 
 
 import com.example.rest_room_api.data.DataManager;
-import com.example.rest_room_api.model.Category;
+import com.example.rest_room_api.model.ExampleModel;
 
 import java.util.List;
 
-public class MainViewModel extends AndroidViewModel {
+public class ExampleViewModel extends AndroidViewModel {
 
     private DataManager dataManager = DataManager.newInstance(getApplication());
 
-    MutableLiveData<List<Category>> liveData = new MutableLiveData<>();
+    MutableLiveData<List<ExampleModel>> liveData = new MutableLiveData<>();
 
-    public MutableLiveData<List<Category>> getLiveData() {
+    public MutableLiveData<List<ExampleModel>> getLiveData() {
         return liveData;
     }
 
-    public MainViewModel(@NonNull Application application) {
+    public ExampleViewModel(@NonNull Application application) {
         super(application);
     }
 

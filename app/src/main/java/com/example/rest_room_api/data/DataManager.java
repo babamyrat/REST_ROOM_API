@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.rest_room_api.data.api.ApiClient;
 import com.example.rest_room_api.data.local.LocalClient;
-import com.example.rest_room_api.model.Category;
+import com.example.rest_room_api.model.ExampleModel;
 import com.example.rest_room_api.utils.NetworkUtils;
 
 import java.util.List;
@@ -39,7 +39,7 @@ public class DataManager {
     }
 
     @SuppressLint("CheckResult")
-    public void loadCategory(MutableLiveData<List<Category>> liveData) {
+    public void loadCategory(MutableLiveData<List<ExampleModel>> liveData) {
         if (NetworkUtils.isNetworkConnected(context)) {
             apiClient.getCategories()
                     .subscribeOn(Schedulers.io())
@@ -57,7 +57,7 @@ public class DataManager {
         }
     }
 
-    public void insertCategories(List<Category> categories) {
+    public void insertCategories(List<ExampleModel> categories) {
         compositeDisposable.add(localClient.insertAll(categories)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

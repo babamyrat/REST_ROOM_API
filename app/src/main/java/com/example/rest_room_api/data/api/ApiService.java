@@ -1,16 +1,15 @@
 package com.example.rest_room_api.data.api;
 
 
-import com.example.rest_room_api.model.CategoryResponse;
+import com.example.rest_room_api.model.ExampleResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 
 public interface ApiService {
 
     @GET("/1e5da9c7ebc28c3a1624")
-    Observable<CategoryResponse> getCategory();
+    Observable<ExampleResponse> getCategory();
 
 //    @Headers("Content-Type: application/json")
 //    @GET("catalog/category")

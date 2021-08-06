@@ -13,19 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.rest_room_api.R;
-import com.example.rest_room_api.model.Category;
+import com.example.rest_room_api.model.ExampleModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHolder> {
 
     private LayoutInflater layoutInflater;
     private Context context;
     private ItemClickListener mClickListener;
-    private List<Category> categoryList = new ArrayList<>();
+    private List<ExampleModel> exampleModelList = new ArrayList<>();
 
-    public CategoryAdapter(Context context) {
+    public ExampleAdapter(Context context) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
@@ -41,11 +41,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
 
-        holder.textView.setText(categoryList.get(position).getIdCategory());
-        holder.textView2.setText(categoryList.get(position).getStrCategory());
+       // holder.textView.setText(categoryList.get(position).getIdCategory());
+        holder.textView2.setText(exampleModelList.get(position).getStrCategory());
 
         Glide.with(context)
-                .load(categoryList.get(position).getStrCategoryThumb())
+                .load(exampleModelList.get(position).getStrCategoryThumb())
                 .placeholder(R.drawable.group)
                 .into(holder.imageView);
 
@@ -53,16 +53,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     }
 
-    public void addItems(List<Category> categories){
-        this.categoryList.clear();
-        this.categoryList.addAll(categories);
+    public void addItems(List<ExampleModel> categories){
+        this.exampleModelList.clear();
+        this.exampleModelList.addAll(categories);
         notifyDataSetChanged();
     }
 
 
     @Override
     public int getItemCount() {
-        return categoryList.size();
+        return exampleModelList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -71,7 +71,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.title);
+           // textView = itemView.findViewById(R.id.title);
             textView2 = itemView.findViewById(R.id.lname);
             imageView = itemView.findViewById(R.id.picture);
             itemView.setOnClickListener(this);

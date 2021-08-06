@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 
 
-import com.example.rest_room_api.model.CategoryResponse;
+import com.example.rest_room_api.model.ExampleResponse;
 import com.example.rest_room_api.utils.AppConstants;
 
 import io.reactivex.Observable;
@@ -47,7 +47,7 @@ public class ApiClient {
         return instance;
     }
 
-    public Observable<CategoryResponse> getCategories(){
+    public Observable<ExampleResponse> getCategories(){
           return apiService.getCategory();
     }
 

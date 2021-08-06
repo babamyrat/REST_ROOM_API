@@ -7,16 +7,12 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "categories")
-public class Category {
+public class ExampleModel {
 
-    @PrimaryKey(autoGenerate = true)
-    @SerializedName("id")
-    @Expose
-    private Integer id;
-
+    @PrimaryKey
     @SerializedName("idCategory")
     @Expose
-    private String idCategory;
+    private Integer idCategory;
     @SerializedName("strCategory")
     @Expose
     private String strCategory;
@@ -27,19 +23,11 @@ public class Category {
     @Expose
     private String strCategoryDescription;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getIdCategory() {
+    public Integer getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(String idCategory) {
+    public void setIdCategory(Integer idCategory) {
         this.idCategory = idCategory;
     }
 

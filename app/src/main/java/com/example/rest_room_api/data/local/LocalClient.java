@@ -6,7 +6,7 @@ import android.util.Log;
 import androidx.room.Room;
 
 
-import com.example.rest_room_api.model.Category;
+import com.example.rest_room_api.model.ExampleModel;
 
 import java.util.List;
 
@@ -28,11 +28,11 @@ public class LocalClient {
         return instance;
     }
 
-    public Observable<List<Category>> getAllCategories(){
+    public Observable<List<ExampleModel>> getAllCategories(){
         return Observable.fromCallable(() -> appDataBase.categoryDao().loadAll());
     }
 
-    public Observable<Boolean> insertAll(List<Category> categories){
+    public Observable<Boolean> insertAll(List<ExampleModel> categories){
         return Observable.fromCallable(() -> {
             try{
                 appDataBase.categoryDao().insertAll(categories);
