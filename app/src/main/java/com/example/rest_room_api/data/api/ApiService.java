@@ -9,10 +9,8 @@ import retrofit2.http.Headers;
 
 public interface ApiService {
 
-    @GET("/aef8046ff2e96b200fc8")
+    @GET("/1e5da9c7ebc28c3a1624")
     Observable<CategoryResponse> getCategory();
-
-
 
 //    @Headers("Content-Type: application/json")
 //    @GET("catalog/category")

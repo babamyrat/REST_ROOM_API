@@ -41,11 +41,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
 
-        holder.textView.setText(categoryList.get(position).getTitle());
-        holder.textView2.setText(categoryList.get(position).getLname());
+        holder.textView.setText(categoryList.get(position).getIdCategory());
+        holder.textView2.setText(categoryList.get(position).getStrCategory());
 
         Glide.with(context)
-                .load(categoryList.get(position).getImage())
+                .load(categoryList.get(position).getStrCategoryThumb())
                 .placeholder(R.drawable.group)
                 .into(holder.imageView);
 

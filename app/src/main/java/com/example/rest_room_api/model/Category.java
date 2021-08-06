@@ -9,22 +9,23 @@ import com.google.gson.annotations.SerializedName;
 @Entity(tableName = "categories")
 public class Category {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
     @Expose
     private Integer id;
-    @SerializedName("title")
-    @Expose
-    private String title;
 
-    @SerializedName("lname")
+    @SerializedName("idCategory")
     @Expose
-    private String lname;
-
-    @SerializedName("image")
+    private String idCategory;
+    @SerializedName("strCategory")
     @Expose
-    private String image;
-
+    private String strCategory;
+    @SerializedName("strCategoryThumb")
+    @Expose
+    private String strCategoryThumb;
+    @SerializedName("strCategoryDescription")
+    @Expose
+    private String strCategoryDescription;
 
     public Integer getId() {
         return id;
@@ -34,29 +35,36 @@ public class Category {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getIdCategory() {
+        return idCategory;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setIdCategory(String idCategory) {
+        this.idCategory = idCategory;
     }
 
-
-    public String getLname() {
-        return lname;
+    public String getStrCategory() {
+        return strCategory;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setStrCategory(String strCategory) {
+        this.strCategory = strCategory;
     }
 
-    public String getImage() {
-        return image;
+    public String getStrCategoryThumb() {
+        return strCategoryThumb;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setStrCategoryThumb(String strCategoryThumb) {
+        this.strCategoryThumb = strCategoryThumb;
+    }
+
+    public String getStrCategoryDescription() {
+        return strCategoryDescription;
+    }
+
+    public void setStrCategoryDescription(String strCategoryDescription) {
+        this.strCategoryDescription = strCategoryDescription;
     }
 
 }

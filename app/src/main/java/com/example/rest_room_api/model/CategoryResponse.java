@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CategoryResponse {
 
-    @SerializedName("results")
+    @SerializedName("categories")
     @Expose
     private List<Category> results = null;
 
@@ -20,3 +20,4 @@ public class CategoryResponse {
     }
 
 }
+
