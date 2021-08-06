@@ -3,9 +3,12 @@ package com.example.rest_room_api;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
@@ -16,11 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
     private CategoryAdapter adapter;
-    private Button lightButton;
-    private Button darkButton;
-    private final static int THEME_LIGHT = 0;
-    private final static int THEME_DARK = 1;
-    private ProgressBar progressBar;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         viewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainViewModel.class);
-
-        /*
-        progressBar = findViewById(R.id.progress_bar);
-        lightButton = findViewById(R.id.light);
-        lightButton.setOnClickListener( view -> {
-            setTheme(AppCompatDelegate.MODE_NIGHT_NO, THEME_LIGHT);
-        });
-        darkButton = findViewById(R.id.dark);
-        darkButton.setOnClickListener(view -> {
-            setTheme(AppCompatDelegate.MODE_NIGHT_YES, THEME_DARK);
-        });
-         */
 
         setupViewPager();
 
@@ -52,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager() {
-        ViewPager2 viewPager2 = findViewById(R.id.view_pager_2);
+        recyclerView = findViewById(R.id.recyclerView);
         adapter = new CategoryAdapter(this);
-        viewPager2.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
     }
 
-    private void setTheme(int themeId, int prefsMode){
-        AppCompatDelegate.setDefaultNightMode(themeId);
-    }
+//    private void setTheme(int themeId, int prefsMode){
+//        AppCompatDelegate.setDefaultNightMode(themeId);
+//    }
 }
