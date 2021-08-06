@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGround"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/light"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:text="light">
+
+    </Button>
+
+
+    <Button
+        android:id="@+id/dark"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_below="@id/light"
+        android:text="dark">
+
+    </Button>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dark"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"
+        android:indeterminateTint="@color/progress_bar"
+        android:layout_marginTop="100dp"/>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

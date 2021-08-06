@@ -1,0 +1,51 @@
+package com.example.rest_room_api.data.local;
+
+import android.content.Context;
+import android.util.Log;
+
+import androidx.room.Room;
+
+
+import com.example.rest_room_api.model.Category;
+
+import java.util.List;
+
+import io.reactivex.Observable;
+
+public class LocalClient {
+
+    private static LocalClient instance;
+    private AppDataBase appDataBase;
+
+    private LocalClient(Context context){
+        appDataBase =  Room.databaseBuilder(context,
+                AppDataBase.class, "database").build();
+    }
+
+    public static LocalClient newInstance(Context context){
+        if (instance == null)
+            instance = new LocalClient(context);
+        return instance;
+    }
+
+    public Observable<List<Category>> getAllCategories(){
+        return Observable.fromCallable(() -> appDataBase.categoryDao().loadAll());
+    }
+
+    public Observable<Boolean> insertAll(List<Category> categories){
+        return Observable.fromCallable(() -> {
+            try{
+                appDataBase.categoryDao().insertAll(categories);
+                return true;
+            }catch (Exception e){
+                Log.d("ERROR" , e.getMessage());
+            }
+
+            return false;
+        });
+    }
+
+
+
+
+}
