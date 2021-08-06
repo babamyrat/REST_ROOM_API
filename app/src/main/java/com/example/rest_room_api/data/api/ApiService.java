@@ -9,8 +9,14 @@ import retrofit2.http.Headers;
 
 public interface ApiService {
 
-    @Headers("Content-Type: application/json")
-    @GET("catalog/category")
+    @GET("/aef8046ff2e96b200fc8")
     Observable<CategoryResponse> getCategory();
 
+
+
+//    @Headers("Content-Type: application/json")
+//    @GET("catalog/category")
+//    Observable<CategoryResponse> getCategory();
+
+    //https://api.npoint.io/0647b08d610d10edf331
 }

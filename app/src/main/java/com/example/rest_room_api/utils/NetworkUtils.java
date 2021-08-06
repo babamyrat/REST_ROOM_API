@@ -4,10 +4,14 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 public class NetworkUtils {
     private NetworkUtils() {
     }
+
 
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager cm =

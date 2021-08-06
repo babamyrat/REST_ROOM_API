@@ -16,9 +16,15 @@ public class Category {
     @SerializedName("title")
     @Expose
     private String title;
+
+    @SerializedName("lname")
+    @Expose
+    private String lname;
+
     @SerializedName("image")
     @Expose
     private String image;
+
 
     public Integer getId() {
         return id;
@@ -34,6 +40,15 @@ public class Category {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getImage() {
